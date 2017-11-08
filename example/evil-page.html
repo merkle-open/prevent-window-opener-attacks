@@ -1,0 +1,26 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+	<h1>Evil target-page</h1>
+	<div class="content">
+		<p class="warning">This page contains an evil script-snippet and try to overwrite the location of the window.opener.</p>
+		<p class="error" style="display:none;">Oops..! You have been redirected!</p>
+		<p class="success" style="display:none;">Great! Redirect was blocked.</p>
+	</div>
+</body>
+
+<script>
+	var selector = ".success";
+	if (window.opener) {
+		window.opener.location.href = "evil-fake-page.html";
+		selector = ".error";
+	}
+	document.querySelector(selector).style.display = "block";
+
+</script>
+
+</html>

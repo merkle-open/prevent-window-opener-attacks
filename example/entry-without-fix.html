@@ -1,0 +1,24 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+	<h1>Entry Page (without fix)</h1>
+	<div class="content">
+		<p>The first link is embeded in the dom. The second link will triggered by an onClick Event. The third link will be injected
+			by javascript after three secounds.
+			<br>
+			<br>All of them has the parameter target set to _blank.
+			<br>
+			<br>
+			<a href="entry-with-fix.html">Show example with fix »</a>
+		</p>
+		<a class="link" href="evil-page.html" target="_blank">Click me!</a>
+		<a class="link" href="#" onclick="window.open('evil-page.html', '_blank')" target="_blank">Click me!</a>
+	</div>
+	<script src="example.js"></script>
+</body>
+
+</html>

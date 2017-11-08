@@ -1,16 +1,22 @@
 {
   "name": "prevent-window-opener-attacks",
   "version": "0.1.0",
-  "description": "Prevent window.opener attacks for blank links",
-  "main": "index.js",
+  "description": "Prevent window.opener attacks for _blank links",
+  "main": "dist/auto.min.js",
+  "files": ["src/", "dist/"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm-run-all --parallel rollup:*",
+    "rollup:auto": "rollup -c config/rollup.auto.js",
+    "rollup:auto-min": "rollup -c config/rollup.auto.min.js",
+    "rollup:lib": "rollup -c config/rollup.lib.js",
+    "rollup:lib-min": "rollup -c config/rollup.lib.min.js"
   },
-  "keywords": [
-    "window.opener",
-    "opener",
-    "attack"
-  ],
+  "keywords": ["window.opener", "opener", "attack"],
   "author": "Rico Schmidt <ricoscript@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "rollup": "^0.51.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
 }
