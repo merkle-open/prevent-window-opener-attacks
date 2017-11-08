@@ -1,0 +1,16 @@
+{
+  "name": "prevent-window-opener-attacks",
+  "version": "0.1.0",
+  "description": "Prevent window.opener attacks for blank links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "window.opener",
+    "opener",
+    "attack"
+  ],
+  "author": "Rico Schmidt <ricoscript@gmail.com>",
+  "license": "MIT"
+}
