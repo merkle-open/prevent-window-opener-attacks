@@ -47,3 +47,5 @@ Allows to call the fix explicitely
   	preventWindowOpenerAttacks();
   });
 ```
+
+[Demo](example/entry-without-fix.html)
