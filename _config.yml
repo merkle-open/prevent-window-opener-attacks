@@ -1,1 +1,3 @@
 theme: jekyll-theme-tactile
+title: Prevent window.opener attacks
+description: As soon as the user clicks a link with `taget="_blank"` this script will replace the default behaviour with a `window.open` call and set `window.opener = null`.
