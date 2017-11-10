@@ -1,15 +1,20 @@
 {
   "name": "prevent-window-opener-attacks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Prevent window.opener attacks for _blank links",
   "main": "dist/auto.min.js",
   "files": ["src/", "dist/"],
   "scripts": {
+    "prepublishOnly": "npm-run-all build",
     "build": "npm-run-all --parallel rollup:*",
     "rollup:auto": "rollup -c config/rollup.auto.js",
     "rollup:auto-min": "rollup -c config/rollup.auto.min.js",
     "rollup:lib": "rollup -c config/rollup.lib.js",
     "rollup:lib-min": "rollup -c config/rollup.lib.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reeko/prevent-window-opener-attacks.git"
   },
   "keywords": ["window.opener", "opener", "attack"],
   "author": "Rico Schmidt <ricoscript@gmail.com>",
