@@ -47,3 +47,17 @@ Allows to call the fix explicitely
   	preventWindowOpenerAttacks();
   });
 ```
+
+## Test your site
+
+Copy the following code in your dev-tools and click on the generated link on the bottom of your page. If your page redirect after clicking the generated link, you will need this fix.
+
+```js
+(function() {
+	var a = document.createElement("a");
+	a.href="https://reeko.github.io/prevent-window-opener-attacks/example/evil-page.html";
+	a.target="_blank";
+	a.innerHTML = "Click me!"
+	document.body.appendChild(a);
+})();
+```
