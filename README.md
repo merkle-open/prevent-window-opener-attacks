@@ -48,9 +48,9 @@ Allows to call the fix explicitely
   });
 ```
 
-## Test your site
+## Test your own site
 
-Copy the following code in your dev-tools and click on the generated link on the bottom of your page. If your page redirect after clicking the generated link, you will need this fix.
+Copy the following code in your dev-tools on your webpage and click on the generated link on the bottom of your page. If your page redirect after clicking the generated link, you will need this fix.
 
 ```js
 (function() {
