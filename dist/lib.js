@@ -32,6 +32,12 @@ function preventWindowOpenerAttacks(clickEvent) {
 function startProtection(whiteList) {
   // Add event listener to documentElement just before it bubbles up
   document.body.addEventListener("click", function(e) {
+    // Ensure that previous events are cleaned up even if the event did not bubble
+    document.documentElement.removeEventListener(
+      "click",
+      preventWindowOpenerAttacks
+    );
+    // Wait for the current event to bubble to the documentElement
     document.documentElement.addEventListener(
       "click",
       preventWindowOpenerAttacks
