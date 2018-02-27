@@ -1,12 +1,9 @@
 {
   "name": "prevent-window-opener-attacks",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Prevent window.opener attacks for _blank links",
   "main": "dist/auto.min.js",
-  "files": [
-    "src/",
-    "dist/"
-  ],
+  "files": ["src/", "dist/"],
   "scripts": {
     "prepublishOnly": "npm-run-all build",
     "build": "npm-run-all --parallel rollup:*",
@@ -19,11 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/reeko/prevent-window-opener-attacks.git"
   },
-  "keywords": [
-    "window.opener",
-    "opener",
-    "attack"
-  ],
+  "keywords": ["window.opener", "opener", "attack"],
   "author": "Rico Schmidt <ricoscript@gmail.com>",
   "license": "MIT",
   "devDependencies": {
