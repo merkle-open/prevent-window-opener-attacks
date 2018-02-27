@@ -2,6 +2,12 @@
 
 As soon as the user clicks a link with `taget="_blank"` this script will replace the default behaviour with a `window.open` call and set `window.opener = null`.
 
+## Examples
+
+[Example without fix](https://reeko.github.io/prevent-window-opener-attacks/example/entry-without-fix.html)
+
+[Example with fix](https://reeko.github.io/prevent-window-opener-attacks/example/entry-with-fix.html)
+
 ## Fix it with the rel attribute
 
 You are able to set the `rel="noreferrer noopener"` attribute on a a-tag. This will allso prevent to call `window.opener` on the location page. But this will only handle simple links.
