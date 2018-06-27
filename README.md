@@ -4,9 +4,9 @@ As soon as the user clicks a link with `taget="_blank"` this script will replace
 
 ## Examples
 
-[Example without fix](https://reeko.github.io/prevent-window-opener-attacks/example/entry-without-fix.html)
+[Example without fix](https://namics.github.io/prevent-window-opener-attacks/example/entry-without-fix.html)
 
-[Example with fix](https://reeko.github.io/prevent-window-opener-attacks/example/entry-with-fix.html)
+[Example with fix](https://namics.github.io/prevent-window-opener-attacks/example/entry-with-fix.html)
 
 ## Fix it with the rel attribute
 
@@ -24,7 +24,7 @@ Copy the following code in your dev-tools on your webpage and click on the gener
 (function() {
   var a = document.createElement("a");
   a.href =
-    "https://reeko.github.io/prevent-window-opener-attacks/example/evil-page.html";
+    "https://namics.github.io/prevent-window-opener-attacks/example/evil-page.html";
   a.target = "_blank";
   a.innerHTML = "Click me!";
   document.body.appendChild(a);
