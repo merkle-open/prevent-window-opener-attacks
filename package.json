@@ -3,25 +3,29 @@
   "version": "0.2.4",
   "description": "Prevent window.opener attacks for _blank links",
   "main": "dist/auto.min.js",
-  "files": ["src/", "dist/"],
+  "files": [
+    "src/",
+    "dist/"
+  ],
   "scripts": {
-    "prepublishOnly": "npm-run-all build",
-    "build": "npm-run-all --parallel rollup:*",
+    "prepublishOnly": "npm run build",
+    "build": "npm-run-all rollup:*",
+    "build:clean": "rimraf dist",
     "rollup:auto": "rollup -c config/rollup.auto.js",
-    "rollup:auto-min": "rollup -c config/rollup.auto.min.js",
-    "rollup:lib": "rollup -c config/rollup.lib.js",
-    "rollup:lib-min": "rollup -c config/rollup.lib.min.js"
+    "rollup:lib": "rollup -c config/rollup.lib.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/reeko/prevent-window-opener-attacks.git"
-  },
-  "keywords": ["window.opener", "opener", "attack"],
+  "repository": "github:namics/prevent-window-opener-attacks",
+  "keywords": [
+    "window.opener",
+    "opener",
+    "attack"
+  ],
   "author": "Rico Schmidt <ricoscript@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "npm-run-all": "^4.1.2",
-    "rollup": "^0.51.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "npm-run-all": "4.1.5",
+    "rimraf": "2.6.3",
+    "rollup": "1.1.2",
+    "rollup-plugin-uglify": "6.0.2"
   }
 }
