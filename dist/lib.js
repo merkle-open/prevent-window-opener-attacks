@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = global || self, factory(global.preventWindowOpenAttacks = {}));
-}(this, function (exports) { 'use strict';
+}(this, (function (exports) { 'use strict';
 
   function preventWindowOpenerAttacks(clickEvent) {
     document.documentElement.removeEventListener(
@@ -56,9 +56,9 @@
     };
   }
 
-  exports.startProtection = startProtection;
   exports.patchWindowOpen = patchWindowOpen;
+  exports.startProtection = startProtection;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));
