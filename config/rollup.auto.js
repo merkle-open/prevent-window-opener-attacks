@@ -1,4 +1,4 @@
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 
 export default [
 	{
@@ -10,7 +10,7 @@ export default [
 	},
 	{
 		input: 'src/index.js',
-		plugins: [ uglify() ],
+		plugins: [ terser() ],
 		output: {
 			file: 'dist/auto.min.js',
 			format: 'iife',

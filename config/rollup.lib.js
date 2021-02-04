@@ -1,4 +1,4 @@
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 
 export default [
 	{
@@ -11,7 +11,7 @@ export default [
 	},
 	{
 		input: 'src/lib.js',
-		plugins: [ uglify() ],
+		plugins: [ terser() ],
 		output: {
 			file: 'dist/lib.min.js',
 			format: 'umd',
