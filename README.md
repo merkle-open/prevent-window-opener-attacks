@@ -1,6 +1,10 @@
 # prevent-window-opener-attacks
 
-As soon as the user clicks a link with `taget="_blank"` this script will replace the default behaviour with a `window.open` call and set `window.opener = null`.
+[![NPM version][npm-image]][npm-url] 
+[![Size][size-image]][size-url]
+[![License][license-image]][license-url] 
+
+As soon as the user clicks a link with `taget="_blank"` this extrem tiny script will replace the default behaviour with a `window.open` call and set `window.opener = null`.
 
 ## Examples
 
@@ -80,3 +84,11 @@ require("prevent-window-opener-attacks/dist/lib.js", function({
   preventWindowOpenerAttacks();
 });
 ```
+
+
+[npm-image]: https://badge.fury.io/js/prevent-window-opener-attacks.svg
+[npm-url]: https://npmjs.org/package/prevent-window-opener-attacks
+[license-image]: https://img.shields.io/badge/license-MIT-green.svg
+[license-url]: http://opensource.org/licenses/MIT
+[size-image]: http://img.badgesize.io/namics/prevent-window-opener-attacks/master/dist/auto.min.js.svg?compression=gzip&label=gzip%20size
+[size-url]: https://unpkg.com/prevent-window-opener-attacks/dist/auto.min.js
