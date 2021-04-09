@@ -91,4 +91,4 @@ require("prevent-window-opener-attacks/dist/lib.js", function({
 [license-image]: https://img.shields.io/badge/license-MIT-green.svg
 [license-url]: http://opensource.org/licenses/MIT
 [size-image]: http://img.badgesize.io/namics/prevent-window-opener-attacks/master/dist/auto.min.js.svg?compression=gzip&label=gzip%20size
-[size-url]: https://unpkg.com/@gondel/core/dist/gondel.es5.min.js
+[size-url]: https://unpkg.com/prevent-window-opener-attacks/dist/auto.min.js
