@@ -18,9 +18,11 @@ function preventWindowOpenerAttacks(clickEvent) {
   }
 
   clickEvent.preventDefault();
-  var win = window.open(clickEvent.target.href, "_blank");
-  if (win) {
-    win.opener = null;
+  // noreferrer will automatically set window.opener to null if supported by the browser
+  let window = window.open(clickEvent.target.href, '_blank', 'noreferrer');
+  // Ensure that window.opener is set to null in every browser
+  if (window) {
+    window.opener = null;
   }
 }
 
