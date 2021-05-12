@@ -1,23 +1,25 @@
 # prevent-window-opener-attacks
 
-[![NPM version][npm-image]][npm-url] 
+[![NPM version][npm-image]][npm-url]
 [![Size][size-image]][size-url]
-[![License][license-image]][license-url] 
+[![License][license-image]][license-url]
 
-As soon as the user clicks a link with `taget="_blank"` this extrem tiny script will replace the default behaviour with a `window.open` call and set `window.opener = null`.
+This extreme tiny script will prevent the default behaviour of a click on an a-tag with `taget="_blank"`, open the link using `window.open` and ensure that `window.opener = null`.
 
 ## Examples
 
-[Example without fix](https://namics.github.io/prevent-window-opener-attacks/example/entry-without-fix.html)
+[Example without fix](https://merkle-open.github.io/prevent-window-opener-attacks/example/entry-without-fix.html)
 
-[Example with fix](https://namics.github.io/prevent-window-opener-attacks/example/entry-with-fix.html)
+[Example with fix](https://merkle-open.github.io/prevent-window-opener-attacks/example/entry-with-fix.html)
 
 ## Fix it with the rel attribute
 
-You are able to set the `rel="noreferrer noopener"` attribute on a a-tag. This will allso prevent to call `window.opener` on the location page. But this will only handle simple links.
+You are able to set the `rel="noreferrer noopener"` attribute on an a-tag. This will also prevent to call `window.opener` on the location page. But this will only handle simple links.
 
 ```html
-<a href="http://example.com" target="_blank" rel="noreferrer noopener">Click me!</a>
+<a href="http://example.com" target="_blank" rel="noreferrer noopener"
+  >Click me!</a
+>
 ```
 
 ## Test your own site
@@ -25,12 +27,12 @@ You are able to set the `rel="noreferrer noopener"` attribute on a a-tag. This w
 Copy the following code in your dev-tools on your webpage and click on the generated link on the bottom of your page. If your page redirect after clicking the generated link, you will need this fix.
 
 ```js
-(function() {
-  var a = document.createElement("a");
+(() => {
+  let a = document.createElement('a');
   a.href =
-    "https://namics.github.io/prevent-window-opener-attacks/example/evil-page.html";
-  a.target = "_blank";
-  a.innerHTML = "Click me!";
+    'https://merkle-open.github.io/prevent-window-opener-attacks/example/evil-page.html';
+  a.target = '_blank';
+  a.innerHTML = 'Click me!';
   document.body.appendChild(a);
 })();
 ```
@@ -42,7 +44,7 @@ Copy the following code in your dev-tools on your webpage and click on the gener
 Fixes the attack vector on document ready automatically
 
 ```js
-import("prevent-window-opener-attacks");
+import('prevent-window-opener-attacks');
 ```
 
 ### CommonJS & AMDJS
@@ -50,7 +52,7 @@ import("prevent-window-opener-attacks");
 Fixes the attack vector on document ready automatically
 
 ```js
-require("prevent-window-opener-attacks");
+require('prevent-window-opener-attacks');
 ```
 
 ### ES Modules - direct call
@@ -58,7 +60,7 @@ require("prevent-window-opener-attacks");
 Allows to call the fix explicitely
 
 ```js
-import { preventWindowOpenerAttacks } from "prevent-window-opener-attacks/src/lib";
+import { preventWindowOpenerAttacks } from 'prevent-window-opener-attacks/src/lib';
 preventWindowOpenerAttacks();
 ```
 
@@ -68,8 +70,8 @@ Allows to call the fix explicitely
 
 ```js
 const {
-  preventWindowOpenerAttacks
-} = require("prevent-window-opener-attacks/dist/lib.js");
+  preventWindowOpenerAttacks,
+} = require('prevent-window-opener-attacks/dist/lib.js');
 preventWindowOpenerAttacks();
 ```
 
@@ -78,17 +80,16 @@ preventWindowOpenerAttacks();
 Allows to call the fix explicitely
 
 ```js
-require("prevent-window-opener-attacks/dist/lib.js", function({
-  preventWindowOpenerAttacks
+require('prevent-window-opener-attacks/dist/lib.js', function ({
+  preventWindowOpenerAttacks,
 }) {
   preventWindowOpenerAttacks();
 });
 ```
 
-
 [npm-image]: https://badge.fury.io/js/prevent-window-opener-attacks.svg
 [npm-url]: https://npmjs.org/package/prevent-window-opener-attacks
 [license-image]: https://img.shields.io/badge/license-MIT-green.svg
-[license-url]: http://opensource.org/licenses/MIT
-[size-image]: http://img.badgesize.io/namics/prevent-window-opener-attacks/master/dist/auto.min.js.svg?compression=gzip&label=gzip%20size
+[license-url]: https://opensource.org/licenses/MIT
+[size-image]: https://img.badgesize.io/merkle-open/prevent-window-opener-attacks/master/dist/auto.min.js.svg?compression=gzip&label=gzip%20size
 [size-url]: https://unpkg.com/prevent-window-opener-attacks/dist/auto.min.js
