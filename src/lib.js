@@ -1,7 +1,8 @@
-"use strict";
+'use strict';
+
 function preventWindowOpenerAttacks(clickEvent) {
   document.documentElement.removeEventListener(
-    "click",
+    'click',
     preventWindowOpenerAttacks
   );
   // Stop if any other javascript prevented the event
@@ -9,11 +10,11 @@ function preventWindowOpenerAttacks(clickEvent) {
     return;
   }
   // Stop if the clicked element is not an "A" element
-  if (!clickEvent.target || clickEvent.target.nodeName !== "A") {
+  if (!clickEvent.target || clickEvent.target.nodeName !== 'A') {
     return;
   }
   // Stop if the clicked a element is not set to target = _blank
-  if (clickEvent.target.target !== "_blank") {
+  if (clickEvent.target.target !== '_blank') {
     return;
   }
 
@@ -26,27 +27,27 @@ function preventWindowOpenerAttacks(clickEvent) {
   }
 }
 
-export function startProtection(whiteList) {
+export function startProtection() {
   // Add event listener to documentElement just before it bubbles up
-  document.body.addEventListener("click", function(e) {
+  document.body.addEventListener('click', function (e) {
     // Ensure that previous events are cleaned up even if the event did not bubble
     document.documentElement.removeEventListener(
-      "click",
+      'click',
       preventWindowOpenerAttacks
     );
     // Wait for the current event to bubble to the documentElement
     document.documentElement.addEventListener(
-      "click",
+      'click',
       preventWindowOpenerAttacks
     );
   });
 }
 
 export function patchWindowOpen() {
-  var originalWindowOpen = window.open;
-  window.open = function(url, target) {
-    var result = originalWindowOpen.apply(this, arguments);
-    if (result && target === "_blank") {
+  let originalWindowOpen = window.open;
+  window.open = function (url, target) {
+    let result = originalWindowOpen.apply(this, arguments);
+    if (result && target === '_blank') {
       result.opener = null;
     }
     return result;

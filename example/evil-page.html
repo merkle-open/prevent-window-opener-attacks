@@ -15,13 +15,13 @@
 </body>
 
 <script>
-var selector = ".success";
+let selector = '.success';
 
 function hack() {
     try {
         if (window.opener) {
-            window.opener.location.href = "evil-fake-page.html";
-            selector = ".error";
+            window.opener.location.href = 'evil-fake-page.html';
+            selector = '.error';
             return true;
         }
     } catch (e) {
@@ -30,7 +30,7 @@ function hack() {
 }
 
 if (!hack()) {
-    document.querySelector(selector).style.display = "block";
+    document.querySelector(selector).style.display = 'block';
 }
 </script>
 
