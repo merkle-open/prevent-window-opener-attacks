@@ -1,6 +1,6 @@
 (() => {
   setTimeout(() => {
-    let a = document.createElement('a');
+    const a = document.createElement('a');
     a.target = '_blank';
     a.innerHTML = 'Click me!';
     a.href = 'evil-page.html';
