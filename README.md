@@ -17,9 +17,7 @@ This extreme tiny script will prevent the default behaviour of a click on an a-t
 You are able to set the `rel="noreferrer noopener"` attribute on an a-tag. This will also prevent to call `window.opener` on the location page. But this will only handle simple links.
 
 ```html
-<a href="http://example.com" target="_blank" rel="noreferrer noopener"
-  >Click me!</a
->
+<a href="http://example.com" target="_blank" rel="noreferrer noopener">Click me!</a>
 ```
 
 ## Test your own site
@@ -28,7 +26,7 @@ Copy the following code in your dev-tools on your webpage and click on the gener
 
 ```js
 (() => {
-  let a = document.createElement('a');
+  const a = document.createElement('a');
   a.href =
     'https://merkle-open.github.io/prevent-window-opener-attacks/example/evil-page.html';
   a.target = '_blank';
