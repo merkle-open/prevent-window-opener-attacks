@@ -8,7 +8,7 @@
 <body>
 	<h1>Entry Page (without fix)</h1>
 	<div class="content">
-		<p>The first link is embeded in the dom. The second link will trigger window.Open by an onClick Event. The third link will
+		<p>The first link is embeded in the dom. The second link will trigger window.open() by an onClick Event. The third link will
 			be injected by javascript after two secounds.
 			<br>
 			<br>All of them has the parameter target set to _blank.
@@ -16,6 +16,7 @@
 			<br>
 			<a href="entry-with-fix.html">Show example with fix »</a>
 		</p>
+		<p class="warning">Please note: nowadays, some browsers fix this issue on some type of links automatically (but not all of them)!</p>
 		<a class="link" href="evil-page.html" target="_blank">Click me!</a>
 		<a class="link" href="#" onclick="window.open('evil-page.html', '_blank')" target="_blank">Click me!</a>
 	</div>
