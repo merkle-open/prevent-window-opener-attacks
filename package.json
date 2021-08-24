@@ -1,6 +1,6 @@
 {
   "name": "prevent-window-opener-attacks",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Prevent window.opener attacks for _blank links",
   "main": "dist/auto.min.js",
   "files": [
