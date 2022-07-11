@@ -71,4 +71,4 @@
   // and start click protection
   onReady(startProtection);
 
-}());
+})();
