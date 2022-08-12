@@ -12,7 +12,7 @@
     "build:clean": "rimraf dist",
     "build:auto": "rollup -c config/rollup.auto.js",
     "build:lib": "rollup -c config/rollup.lib.js",
-    "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
+    "clean": "npx -y rimraf package-lock.json node_modules",
     "prepublishOnly": "npm run build && npx pkg-ok@2.3.1",
     "test": "echo \"No test specified\" && exit 0",
     "update-dependencies": "npx npm-check-updates -u"
